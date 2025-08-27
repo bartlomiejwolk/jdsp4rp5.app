@@ -57,18 +57,26 @@ from the release/assets page
 	* Set Post gain to 15.00dB
 	* Enable Arbitrary response equalizer
 	* Click on the graph and tap "Edit as string"
-	* For Retroid Pocket 5, paste this magic string (2025/07/31 improved, thanks tobakutiku!):<br>
+	* For Retroid Pocket 5, when using the official grip, it's a good idea to fill the hollow handles with something like foam or sponge pieces. This prevents the plastic from acting as a resonance chamber, ruining the sound.<br>
+	* Retroid Pocket 5: paste this magic string (2025/07/31 improved, thanks tobakutiku!):<br>
 	```
   	GraphicEQ: 480 0; 600 -5; 700 -16; 1000 -18; 1200 -10; 1670 -10; 2160 -18; 2800 -18; 3800 -28; 5000 -7; 7000 0;
 	```
-	* Still on Retroid Pocket 5, if you are using the grip, it's a good idea to fill the hollow handles with something like foam or sponge pieces. This prevents the plastic from acting as a resonance chamber, ruining the sound.
-	* For Flip 2, Paste this magic string:<br>
+	* Flip 2: Paste one of the following magic strings:<br>
   	```
-	GraphicEQ: 500 0; 700 -11; 950 -10; 1650 -15; 2225 -10; 3100 -12.5; 5000 -11; 8500 -21; 16500 0; 
+	GraphicEQ: 347 0; 450 -4.5; 500 -8 ; 600 -4.5; 1015 -17.5; 1500 -13; 2300 -8; 4000 -8.5; 6000 -13.5; 7000 -16.5; 8500 -22.5; 11000 -12; 12000 -4; 16000 0;
 	```
-	* Tap the cog icon in the lower/left side of the screen
-	* Select Audio processing, enable "Legacy mode".
-	* If needed, turn on JamesDSP by tapping the "Power on" icon in the center/lower part of the screen.
+   * Flip 2: but with more (and more) sparkling sound:
+  	```
+	GraphicEQ: 25 -1.5; 63 -0.75; 100 0.0; 347 -0.74; 450 -5.9425; 500 -9.6425; 600 -6.25; 1015 -19.55; 1500 -14.59; 2300 -8.97; 4000 -8.63; 6000 -13.37; 7000 -16.31; 8500 -22.22; 11000 -11.71; 12000 -3.79; 16000 -0.125;
+	```
+  	```
+	GraphicEQ: 25 -3.00; 63 -1.50; 100 0.00; 347 -1.48; 450 -7.385; 500 -11.285; 600 -8.00; 1015 -21.60; 1500 -16.18; 2300 -9.95; 4000 -8.75; 6000 -13.25; 7000 -16.13; 8500 -21.94; 11000 -11.42; 12000 -3.59; 16000 -0.25;
+	```
+
+* Tap the cog icon in the lower/left side of the screen
+* Select Audio processing, enable "Legacy mode".
+* If needed, turn on JamesDSP by tapping the "Power on" icon in the center/lower part of the screen.
 
 
    
