@@ -4,16 +4,11 @@
 	TMPFS="$SDIR/support/jdsp4rp5_tmpfs"
 #G2 profile: fixed soundfx directory and config targets
 		SOUNDFX_DIR=/vendor/lib64/soundfx
-		AUDIO_POLICY_TARGETS="/vendor/etc/audio/sku_cliffs_qssi/audio_policy_configuration.xml"
-		AUDIO_EFFECTS_TARGETS="/vendor/etc/audio/sku_pineapple/audio_effects.xml /vendor/etc/audio_effects.xml /vendor/etc/audio/audio_effects.xml /vendor/etc/audio/sku_cliffs/audio_effects.xml"
+		AUDIO_POLICY_TARGET=/vendor/etc/audio/sku_cliffs_qssi/audio_policy_configuration.xml
+		AUDIO_EFFECTS_TARGET=/vendor/etc/audio/sku_cliffs/audio_effects.xml
 
 #cleanup
-	if [ -n "$AUDIO_POLICY_TARGETS" ]; then
-		for tgt in $AUDIO_POLICY_TARGETS; do
-			[ -f "$tgt" ] || continue
-			umount "$tgt"
-		done
-	fi
+	[ -f "$AUDIO_POLICY_TARGET" ] && umount "$AUDIO_POLICY_TARGET"
 	for m in $(mount |grep tmpfs | grep $(basename $TMPFS)| awk -F' on ' '{print $2}' | awk -F' type ' '{print $1}') ; do
 		umount -l "$m"
 	done
@@ -22,12 +17,7 @@
 		umount -l "$m"
 	done
 	
-	if [ -n "$AUDIO_EFFECTS_TARGETS" ]; then
-		for tgt in $AUDIO_EFFECTS_TARGETS; do
-			[ -f "$tgt" ] || continue
-			umount "$tgt"
-		done
-	fi
+	[ -f "$AUDIO_EFFECTS_TARGET" ] && umount "$AUDIO_EFFECTS_TARGET"
 
 	umount /vendor/etc/acdbdata/MTP
 
